@@ -1,0 +1,14 @@
+{ "credentials": [
+		{
+			"username": "priyanka",
+			"password": "12345678"
+		},
+		{
+			"username": "bizadmin",
+			"password": "bizadmin"
+		}
+	
+	],
+	"url": "https://www.flipkart.com/"
+	
+	}
