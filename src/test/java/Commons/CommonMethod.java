@@ -2,6 +2,7 @@ package Commons;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -137,10 +138,36 @@ public class CommonMethod {
 		
 		Actions act = new Actions(driver);
 		
-		act.moveToElement(element).click(element2).build().perform();
+	    act.moveToElement(element).click(element2).build().perform();
+		
 	
+	}
+	
+	/*
+	 * This Method is used for hover the element
+	 * @parm element
+	 */
+	public void hoverOverElementAndPause(WebElement element) {
 		
+		Actions act = new Actions(driver);
 		
+		//act.moveToElement(element).click().build().perform();
+		act.clickAndHold(element).pause(2).build().perform();
+	
+	}
+	
+	
+	/*
+	 * This Method is used for hover the element
+	 * @parm element
+	 */
+	public void hoverOverElement(WebElement element) {
+		
+		Actions act = new Actions(driver);
+		
+		//act.moveToElement(element).click().build().perform();
+		act.clickAndHold(element).click().pause(2).build().perform();
+	
 	}
 	
 	 /* This Method add explicit wait upto 30 seconds for element visible in dom
@@ -226,6 +253,8 @@ public class CommonMethod {
 		return text;
 		
 	}
+	
+
 	
 	
 	/* This Method handles the Alert box and return alert text

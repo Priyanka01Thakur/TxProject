@@ -53,11 +53,42 @@ CommonMethod commonmethod= null;
 		
 	}
 	
-	public WebElement getBrandValue() {
+	public WebElement getBrandFilterSection() {
 		
-		return commonmethod.getElement(FashionPageSelectors.BrandFilter);
+		return commonmethod.getElement(FashionPageSelectors.BrandSection);
 		
 	}
+	
+	public WebElement getExpandBrandFilter() {
+		
+		return commonmethod.getElement(FashionPageSelectors.ExpandBrandFilter);
+		
+	}
+	
+	public WebElement getTotalBrandFilters() {
+		
+		return commonmethod.getElement(FashionPageSelectors.BrandFilters);
+		
+	}
+	
+	public WebElement getdefaultsortoption() {
+		
+		return commonmethod.getElement(FashionPageSelectors.defaultSortByOption);
+		
+	}
+
+	public WebElement gettotalProductsonFirstPage() {
+	
+	return commonmethod.getElement(FashionPageSelectors.totalProductsonFirstPage);
+	
+}
+
+
+	public WebElement getPageTitle() {
+	
+	return commonmethod.getElement(FashionPageSelectors.pageTitle);
+	
+}
 	
 	
 	

@@ -1,4 +1,4 @@
-package TestCases;
+package testsCartPage;
 import org.testng.annotations.Test;
 import Base.BaseTest;
 import Pages.CartPage;
@@ -12,10 +12,10 @@ public class CartTests extends BaseTest{
     public String inusname = "dummy" ;
     public String inpswd = "dummypwd";
 
-    /*
+  
 // Test if cart page is accessible without login
    @Test(description = "TC001")
-   public void getCart() {
+   public void getCartb() {
 		
 		CartPage cartPage = new CartPage(driver);
 		LoginPage loginPage= new LoginPage(driver);
@@ -48,7 +48,7 @@ public class CartTests extends BaseTest{
 		
 	}
    
- */
+
    
 //Verify the cart item count
    @Test(description = "TC003")

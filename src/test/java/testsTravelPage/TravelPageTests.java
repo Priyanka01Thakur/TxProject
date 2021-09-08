@@ -1,4 +1,4 @@
-package TestCases;
+package testsTravelPage;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;

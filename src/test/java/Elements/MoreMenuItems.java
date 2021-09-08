@@ -27,5 +27,31 @@ public class MoreMenuItems {
 			return commonmethod.getElement(MoreMenuItemSelectors.advertise);
 			
 		}
+		
+		public WebElement getPageMetaTitle(){
+			
+			return commonmethod.getElement(MoreMenuItemSelectors.advertisePageMetaTitle);
+			
+		}
+		
+		
+		public WebElement getPageImage(){
+			
+			return commonmethod.getElement(MoreMenuItemSelectors.advertisePageImage);
+			
+		}
+	
+		public WebElement getPageFormTitle(){
+		
+		return commonmethod.getElement(MoreMenuItemSelectors.advertisePageFormTitle);
+		
+	}
+		
+		
+		
+		
+		
+		
+		
 
 }
