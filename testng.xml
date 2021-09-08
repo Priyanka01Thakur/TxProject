@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Suite">
+  <test thread-count="5" parallel="classes" name="Test">
+    <classes>
+      <class name="testsMoreMenuItem.AdvertisePageTests"/>
+      <class name="testsLogin.LoginTest"/>
+      <class name="Base.BaseTest"/>
+      <class name="testsFashionPage.FashionPageTests">
+       <methods> 
+      
+      <include name="gettotalBrandFilters"></include>
+      
+      </methods>
+      </class>
+      
+      <class name="testsTravelPage.TravelPageTests"/>
+      <class name="testsCartPage.CartTests"/>
+      <class name="testsHomepage.HomePageTests"/>
+      
+           
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
