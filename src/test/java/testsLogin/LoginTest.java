@@ -105,7 +105,7 @@ public LoginTest() {
 	}
 	
 
-	
+	/*	
 //	verify create new account functionality
 	@Test(description = "TC007", groups= {"smoke"})
 	public void createNewAccount() {
@@ -115,7 +115,7 @@ public LoginTest() {
 					
 	}
 	
-	/*
+
 	
 //	verify forgot password functionality
 	@Test(description = "TC08", groups= {"smoke"})
