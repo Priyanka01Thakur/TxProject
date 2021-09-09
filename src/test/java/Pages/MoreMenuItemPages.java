@@ -30,10 +30,11 @@ public class MoreMenuItemPages {
 	
 	public MoreMenuItemPages getAdvertisePage() {
 	
-		commonMethod.waitForSec(2);
-		System.out.print(moreElements.getMoreMenuItem().getText());
-		commonMethod.hoverOverElement(moreElements.getMoreMenuItem());
-		moreElements.getAdvertisePage().click();
+		//commonMethod.waitForSec(2);
+		//System.out.print(moreElements.getMoreMenuItem().getText());
+		//commonMethod.hoverOverElement(moreElements.getMoreMenuItem());
+		//moreElements.getAdvertisePage().click();
+		commonMethod.hoverOverElementAndClick(moreElements.getMoreMenuItem(), moreElements.getAdvertisePage());
 		
 		//commonMethod.waitForElementToBeVisible(moreElements.getAdvertisePage());
 		//commonMethod.hoverOverElementAndClick(moreElements.getMoreMenuItem(), moreElements.getAdvertisePage());

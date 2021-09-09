@@ -115,6 +115,8 @@ public LoginTest() {
 					
 	}
 	
+	/*
+	
 //	verify forgot password functionality
 	@Test(description = "TC08", groups= {"smoke"})
 	public void forgotPassword() {
@@ -131,5 +133,6 @@ public LoginTest() {
 		LoginPage loginPage = new LoginPage(driver);
 			
 	}
+	*/
 	
 }

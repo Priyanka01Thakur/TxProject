@@ -2,26 +2,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-     <groups>
-   
-         <run>
-         
-           <include  name="smoke" />
-                      
-         
-         </run>
-        
-     </groups>
- 
     <classes>
-      <class name="TestCases.AdvertisePageTests"/>
-      <class name="TestCases.TravelPageTests"/>
-      <class name="TestCases.CartTests"/>
-      <class name="TestCases.FashionPageTests"/>
+      <class name="testsMoreMenuItem.AdvertisePageTests"/>
+      <class name="testsLogin.LoginTest"/>
       <class name="Base.BaseTest"/>
-      <class name="TestCases.HomePageTests"/>
-      <class name="TestCases.LoginTest"/>
-    </classes>
-    
+      <class name="testsFashionPage.FashionPageTests"/>
+      <class name="testsCartPage.CartTests"/>
+  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

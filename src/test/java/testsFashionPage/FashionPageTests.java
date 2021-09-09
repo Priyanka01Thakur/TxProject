@@ -7,7 +7,7 @@ import Pages.FashionPage;
 import Pages.LoginPage;
 
 public class FashionPageTests extends BaseTest{
-	/*	
+	
 		   
 		//Test if page is accessible
 		@Test(description = "TC001")
@@ -66,8 +66,7 @@ public class FashionPageTests extends BaseTest{
 								
 				}
 				
-				*/
-
+		
 				//Verify the brand filters
 				@Test(description = "TC005")
 				public void gettotalBrandFilters() {

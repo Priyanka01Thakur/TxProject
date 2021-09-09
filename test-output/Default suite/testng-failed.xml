@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.LoginTest">
+      <class name="testsMoreMenuItem.AdvertisePageTests">
         <methods>
-          <include name="startUp"/>
-          <include name="loginWithValidCredentials"/>
-          <include name="validatepageTitle"/>
-          <include name="validatePrivacypolicyLink"/>
+          <include name="getAdvertisePageMetaTitle"/>
+          <include name="getAdvertisePage"/>
+          <include name="getAdvertisePageImage"/>
+          <include name="getAdvertisePageFormTitle"/>
         </methods>
-      </class> <!-- TestCases.LoginTest -->
+      </class> <!-- testsMoreMenuItem.AdvertisePageTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
