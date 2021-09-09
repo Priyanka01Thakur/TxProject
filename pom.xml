@@ -4,47 +4,17 @@
   <groupId>TxProject</groupId>
   <artifactId>TxProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  
   <name>TxProject</name>
   <url>http://maven.apache.org</url> 
   
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  <build>
-        <!-- Source directory configuration -->
-      <!--   <sourceDirectory>src</sourceDirectory> -->
-        
-        <plugins>
-            <!-- Following plugin executes the testng tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-surefire-plugin</artifactId>
-              <version>2.19.1</version>
-  
-                <configuration>
-                    <!-- Suite testng xml file to consider for test execution -->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>TxProjectTestng</suiteXmlFile>
-                   <!--      <suiteXmlFile>suites-test-testng.xml</suiteXmlFile>  -->
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
-            <!-- Compiler plugin configures the java version to be usedfor compiling 
-                the code -->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-  
-  
+		<log4jVersion>2.12.0</log4jVersion>
+		<aspectj.version>1.8.10</aspectj.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<browser>Chrome</browser>
+		<suite>txtestng.xml</suite>
+	</properties>
   
 
   <dependencies>
@@ -106,5 +76,62 @@
 			<version>2.10.0.pr1</version>
 		</dependency>
 
-   </dependencies>
+   </dependencies> 
+   
+   
+   
+   <!--  plugins is required for executing tests -->
+   <build>
+   
+      <plugins>
+          
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-surefire-plugin</artifactId>
+                 <version>2.22.2</version>
+                   <!--Configuration of TestNG with Maven -->
+                     <configuration>
+                      <!--Configuration of Parallel Execution -->
+                      <!-- <parallel>classes</parallel> <threadCount>3</threadCount> -->
+                      <properties>
+                      <property>
+                      <!--Configuration of Verbose of Report or Information -->
+                      <name>surefire.testng.verbose</name>
+                      <value>2</value>
+                      </property>
+                      </properties>
+                      <suiteXmlFiles>
+                      <!--Configuration of xml file that is picked by maven to run TestNG
+                      suite -->
+                      <suiteXmlFile>txtestng.xml</suiteXmlFile>
+                      </suiteXmlFiles>
+                       </configuration>
+                    </plugin>
+                <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <configuration>
+                    <verbose>true</verbose>
+                    <fork>true</fork>
+                    <executable>${JAVA_HOME}/bin/javac</executable>
+                   <compilerVersion>1.8</compilerVersion>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                 </configuration>
+              </plugin>
+       
+       
+       </plugins>
+   
+   
+   </build>
+   
+   
+   
+   
+   
+   
+   
+   
 </project>
