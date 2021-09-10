@@ -76,6 +76,13 @@ CommonMethod commonmethod= null;
 		return commonmethod.getElement(FashionPageSelectors.defaultSortByOption);
 		
 	}
+	
+	
+	public WebElement getNewSortOption() {
+		
+		return commonmethod.getElement(FashionPageSelectors.SortByOption);
+		
+	}
 
 	public WebElement gettotalProductsonFirstPage() {
 	
@@ -90,7 +97,23 @@ CommonMethod commonmethod= null;
 	
 }
 	
+	public WebElement getPriceSliderMin() {
+		
+		return commonmethod.getElement(FashionPageSelectors.prizeSliderMin);
+		
+	}
 	
+	public WebElement getPriceSliderMax() {
+		
+		return commonmethod.getElement(FashionPageSelectors.prizeSliderMax);
+		
+	}
+	
+	public WebElement getProductPrice() {
+		
+		return commonmethod.getElement(FashionPageSelectors.productPrice);
+		
+	}
 	
 
 }
