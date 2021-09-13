@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+
+
+<listeners>  
+<listener class-name="Listerners.Listerner"/>  
+</listeners> 
+
+  <test thread-count="1" name="Smoke Tests">
+  
+   	<groups>
+         <run>
+            <include name = "smoke" />
+         </run>
+      </groups>
+      
+      
     <classes>
       <class name="testsMoreMenuItem.AdvertisePageTests"/>
-      <class name="testsLogin.LoginTest"/>
-      <class name="Base.BaseTest"/>
-      <class name="testsFashionPage.FashionPageTests"/>
-      <class name="testsCartPage.CartTests"/>
-  </classes>
+     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

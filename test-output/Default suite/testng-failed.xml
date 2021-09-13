@@ -6,8 +6,10 @@
       <class name="testsMoreMenuItem.AdvertisePageTests">
         <methods>
           <include name="getAdvertisePageMetaTitle"/>
-          <include name="getAdvertisePage"/>
-          <include name="getAdvertisePageImage"/>
+          <include name="startUp"/>
+          <include name="endReport"/>
+          <include name="setExtent"/>
+          <include name="tearDown"/>
           <include name="getAdvertisePageFormTitle"/>
         </methods>
       </class> <!-- testsMoreMenuItem.AdvertisePageTests -->
