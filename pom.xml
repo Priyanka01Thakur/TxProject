@@ -1,8 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>TxProject</groupId>
   <artifactId>TxProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>TxProject</name>
+  <url>http://maven.apache.org</url> 
+  
+  <properties>
+		<log4jVersion>2.12.0</log4jVersion>
+		<aspectj.version>1.8.10</aspectj.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<browser>Chrome</browser>
+		<suite>txtestng.xml</suite>
+	</properties>
+  
+
   <dependencies>
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -18,7 +32,7 @@
     <version>1.1.1</version>
 </dependency>
 
-  
+ 
   <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependency>
     <groupId>junit</groupId>
@@ -26,6 +40,14 @@
     <version>4.13.1</version>
     <scope>test</scope>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.8</version>
+</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-json -->
 <dependency>
@@ -61,6 +83,77 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.10.0.pr1</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+	
+	<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>javax.mail-api</artifactId>
+    <version>1.6.2</version>
+	</dependency>
+		
+		<dependency>
+    <groupId>com.relevantcodes</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>2.41.2</version>
+</dependency>
 
-   </dependencies>
+   </dependencies> 
+   
+   
+   
+   <!--  plugins is required for executing tests -->
+   <build>
+   
+      <plugins>
+          
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-surefire-plugin</artifactId>
+                 <version>2.22.2</version>
+                   <!--Configuration of TestNG with Maven -->
+                     <configuration>
+                      <!--Configuration of Parallel Execution -->
+                      <!-- <parallel>classes</parallel> <threadCount>3</threadCount> -->
+                      <properties>
+                      <property>
+                      <!--Configuration of Verbose of Report or Information -->
+                      <name>surefire.testng.verbose</name>
+                      <value>2</value>
+                      </property>
+                      </properties>
+                      <suiteXmlFiles>
+                      <!--Configuration of xml file that is picked by maven to run TestNG
+                      suite -->
+                      <suiteXmlFile>txtestng.xml</suiteXmlFile>
+                      </suiteXmlFiles>
+                       </configuration>
+                    </plugin>
+                <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <configuration>
+                    <verbose>true</verbose>
+                    <fork>true</fork>
+                    <executable>${JAVA_HOME}/bin/javac</executable>
+                   <compilerVersion>1.8</compilerVersion>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                 </configuration>
+              </plugin>
+       
+       
+       </plugins>
+   
+   
+   </build>
+   
+   
+   
+   
+   
+   
+   
+   
 </project>
