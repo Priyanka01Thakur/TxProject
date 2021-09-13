@@ -19,7 +19,7 @@ public LoginTest() {
 
 
 	//	verify the required fields validation on login form 
-    @Test(priority=2)
+    @Test(description = "TC001",groups= {"regression"})
 	public void loginRequiredfieldvalidation() {
 		
 		LoginPage loginPage = new LoginPage(driver);
@@ -33,7 +33,7 @@ public LoginTest() {
     
 	
 //	
-	@Test()
+	@Test(description = "TC002",groups= {"regression","smoke"})
 	public void loginWithValidCredentials(){
 		Actions act = new Actions(driver);
 		
@@ -55,7 +55,7 @@ public LoginTest() {
 
 
 //	verify the login functionality with invalid credentials
-	@Test()
+	@Test(description = "TC003", groups= {"sanity"})
 	public void loginWithInvalidCredentials() {
 		
 		LoginPage loginPage = new LoginPage(driver);
@@ -71,7 +71,7 @@ public LoginTest() {
 	
 		
 	//	verify the login page title
-		@Test(priority=1)
+		@Test(description = "TC004",groups={"sanity"})
 		public void validatepageTitle() {
 			
 			LoginPage loginPage = new LoginPage(driver); 
@@ -83,9 +83,9 @@ public LoginTest() {
 			
 	}	
 
-	/*	
+		
 //		verify if close login popup is working
-		@Test(description = "TC005")
+		@Test(description = "TC005",groups={"regression","sanity"})
 		public void closeloginpopup() {
 					
 			LoginPage loginPage = new LoginPage(driver);
@@ -96,7 +96,7 @@ public LoginTest() {
 	
 	
 	//	verify the Privacy policy link
-	@Test(description = "TC006")
+	@Test(description = "TC006", groups= {"regression", "sanity"})
 	public void validatePrivacypolicyLink() {
 		
 		LoginPage loginPage = new LoginPage(driver);
@@ -105,9 +105,9 @@ public LoginTest() {
 	}
 	
 
-	
+	/*	
 //	verify create new account functionality
-	@Test(description = "TC007")
+	@Test(description = "TC007", groups= {"smoke"})
 	public void createNewAccount() {
 				
 		LoginPage loginPage = new LoginPage(driver);
@@ -115,8 +115,10 @@ public LoginTest() {
 					
 	}
 	
+
+	
 //	verify forgot password functionality
-	@Test(description = "TC08")
+	@Test(description = "TC08", groups= {"smoke"})
 	public void forgotPassword() {
 				
 		LoginPage loginPage = new LoginPage(driver);
@@ -125,7 +127,7 @@ public LoginTest() {
 	}
 	
 //	verify forgot password functionality
-	@Test(description = "TC09")
+	@Test(description = "TC09", groups= {"sanity"})
 	public void getfirstvalue() {
 				
 		LoginPage loginPage = new LoginPage(driver);

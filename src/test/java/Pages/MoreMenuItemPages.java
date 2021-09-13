@@ -30,10 +30,11 @@ public class MoreMenuItemPages {
 	
 	public MoreMenuItemPages getAdvertisePage() {
 	
-		commonMethod.waitForSec(2);
-		System.out.print(moreElements.getMoreMenuItem().getText());
+		//commonMethod.waitForSec(2);
+		//System.out.print(moreElements.getMoreMenuItem().getText());
 		commonMethod.hoverOverElement(moreElements.getMoreMenuItem());
 		moreElements.getAdvertisePage().click();
+		//commonMethod.hoverOverElementAndClick(moreElements.getMoreMenuItem(), moreElements.getAdvertisePage());
 		
 		//commonMethod.waitForElementToBeVisible(moreElements.getAdvertisePage());
 		//commonMethod.hoverOverElementAndClick(moreElements.getMoreMenuItem(), moreElements.getAdvertisePage());
@@ -49,7 +50,7 @@ public class MoreMenuItemPages {
 		String pageMetaTitle = moreElements.getPageMetaTitle().getAttribute("title");
 		System.out.print(moreElements.getPageMetaTitle().getText());
 		System.out.print(pageMetaTitle);
-		//assertEquals(pageMetaTitle,"Flipkart Ads Platform");
+		assertEquals(pageMetaTitle,"Flipkart Ads Platform");
 		System.out.print("A="+ pageMetaTitle + "Meta Title is valid" + "B="+ moreElements.getPageMetaTitle().getText());
 		return this;
 		
@@ -75,7 +76,7 @@ public class MoreMenuItemPages {
 	public MoreMenuItemPages getPageFormTitle() {
 		
 		String pageFormTitle = moreElements.getPageFormTitle().getText();
-		assertEquals(pageFormTitle,"Please enter in your credentials to login");
+		assertEquals(pageFormTitle,"Please enter in your credentials to logins");
 		System.out.print("Valid page form title is showing");
 		return this;
 		

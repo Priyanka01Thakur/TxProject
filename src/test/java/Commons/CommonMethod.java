@@ -2,8 +2,6 @@ package Commons;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,6 +17,7 @@ import Selectors.LoginSelectors;
 public class CommonMethod {
       
 	WebDriver driver = null;
+
 	
 	public CommonMethod(WebDriver driver) {
 		
@@ -35,6 +34,9 @@ public class CommonMethod {
 		return driver.findElement(SelectorScheme);
 		
 	}
+	
+	
+	
 	
 	/*
 	 * This Method return list of Elements. 
@@ -91,6 +93,7 @@ public class CommonMethod {
 	}
 	
 	
+	
 	/*
 	 * This Method switches back to default frame
 	 */
@@ -135,12 +138,14 @@ public class CommonMethod {
 	 */
 	public void hoverOverElementAndClick(WebElement element, WebElement element2) {
 		
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;  
 		Actions act = new Actions(driver);
 		
-	    act.moveToElement(element).click(element2).build().perform();
+		js.executeScript("arguments[0].click();",element);
+	    act.moveToElement(element).click().moveToElement(element2).build().perform();
+	    //(element2).build().perform();
+	   // act.moveToElement(element2).build().perform();
 		
-	
 	}
 	
 	/*
@@ -153,6 +158,21 @@ public class CommonMethod {
 		
 		//act.moveToElement(element).click().build().perform();
 		act.clickAndHold(element).pause(2).build().perform();
+		
+	
+	}
+	
+	/*
+	 * This Method is used drag n drop an element
+	 * @parm element
+	 * @parm x-coordinate
+	 * @parm y-coordinate
+	 */
+	public void dragAndDropElement(WebElement element, int x, int y) {
+		
+		Actions act = new Actions(driver);
+		
+		act.dragAndDropBy(element,x, y).perform();
 	
 	}
 	

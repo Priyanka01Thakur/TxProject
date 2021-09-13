@@ -20,6 +20,8 @@ public class FashionPage {
 	
 	public FashionPageElements fashionPageElements = null;
 	public CommonMethod commonMethod = null;
+	 int Enterminpricelimit = 500; 	 
+	 int Entermaxpricelimit = 1500;
 	 
 	public FashionPage(WebDriver driver) {
 		
@@ -48,10 +50,36 @@ public class FashionPage {
 		
 	}
 	
-	public FashionPage getdefaultsortoption() {
+	public FashionPage getdefaultSortOption() {
 		
 		String defaultSortOption = fashionPageElements.getdefaultsortoption().getText();
 		assertEquals(defaultSortOption,"Popularity");
+		return this;		
+		
+	}
+	
+	
+	public FashionPage changeSortOption_PriceLowtoHigh() {
+		
+		List<WebElement> totalSortOptions = commonMethod.getListOfElements(FashionPageSelectors.SortByOption);
+		
+		totalSortOptions.get(1).click();
+		
+		commonMethod.waitForSec(5);
+		
+		return this;		
+		
+	}
+	
+	
+	public FashionPage changeSortOption_PriceHightoLow() {
+		
+		List<WebElement> totalSortOptions = commonMethod.getListOfElements(FashionPageSelectors.SortByOption);
+		
+		totalSortOptions.get(2).click();
+		
+		commonMethod.waitForSec(5);
+		
 		return this;		
 		
 	}
@@ -86,7 +114,82 @@ public class FashionPage {
 	    return this;
 	}
 
+	public FashionPage getProductPriceRangeFilter() {
+		
+		// Minimum filter values are Min, 250, 500, 1000, 1500, 2000, 2500
+		// Maximum filter values are 250, 500, 1000, 1500, 2000, 2500, 2500+
+		
+		
+				
+		 int intersectvalue =33; 	 int totalintersects = 5;
+		 
+		 if (Enterminpricelimit >= 500) {
+		 
+			 int x_axismin =  ((Enterminpricelimit/500)+1)*intersectvalue;
+			 commonMethod.dragAndDropElement((fashionPageElements.getPriceSliderMin()),x_axismin,0);
+		 }
+		 
+		 else {
+			 int x_axismin =  intersectvalue;
+			 commonMethod.dragAndDropElement((fashionPageElements.getPriceSliderMin()),x_axismin,0);
+		}
+		 
+		 int x_axismax = -(totalintersects-((Entermaxpricelimit/500)-1))*intersectvalue;
+		 
+		 commonMethod.waitForSec(5);
+		 
+		 commonMethod.dragAndDropElement((fashionPageElements.getPriceSliderMax()),x_axismax,0);
+		 commonMethod.waitForSec(5);
+		 return this;
+		
+	}
 	
+	
+	public FashionPage validateProductMinPrice() {
+		
+		List<WebElement> productsPrices = commonMethod.getListOfElements(FashionPageSelectors.productPrice);
+		
+		String productsPrice = productsPrices.get(0).getText().replace(",","").replace("₹","");
+		
+		int price = Integer.parseInt(productsPrice);
+		
+		if (price == Enterminpricelimit || price > Enterminpricelimit ) {
+		
+			System.out.print("Lowest product's price is = " +productsPrice+ "and minimum price ranges is 500"+ "\n");
+		}
+		
+		else {
+			
+			System.out.print("Lowest product's price is = " +productsPrice+ "but minimum price ranges is 500"+ "\n");
+		}
+			
+		
+		return this;
+		
+	}
+	
+	
+	public FashionPage validateProductMaxPrice() {
+		
+		List<WebElement> productsPrices = commonMethod.getListOfElements(FashionPageSelectors.productPrice);
+		String productsPrice = productsPrices.get(0).getText().replace(",","").replace("₹","");
+		
+		int price = Integer.parseInt(productsPrice);
+		
+		if (price == Entermaxpricelimit || price < Entermaxpricelimit ) {
+		
+			System.out.print("Highest product's price is = " +productsPrice+ "and maximum price ranges is 1500" + "\n");
+		}
+		
+		else {
+			
+			System.out.print("Highest product's price is = " +productsPrice+ "but maximum price ranges is 1500" + "\n");
+		}
+			
+		
+		return this;
+		
+	}
 	
 	public FashionPage getTotalBrandFilters() {
 		

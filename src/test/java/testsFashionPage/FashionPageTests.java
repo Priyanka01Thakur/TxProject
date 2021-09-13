@@ -68,16 +68,19 @@ public class FashionPageTests extends BaseTest{
 				
 				*/
 
-				//Verify the brand filters
+				//Verify the price range filter functionality
 				@Test(description = "TC005")
 				public void gettotalBrandFilters() {
 					
 					FashionPage fashionPage = new FashionPage(driver);
 					LoginPage loginPage= new LoginPage(driver);
 					loginPage.validateCloseloginbtn();
-					//fashionPage.getFashionPage();
 					fashionPage.getFasionWomenEthnicPage();
-					fashionPage.getTotalBrandFilters1();
+					fashionPage.getProductPriceRangeFilter(); //Apply min/max price range
+					fashionPage.changeSortOption_PriceLowtoHigh();
+					fashionPage.validateProductMinPrice();
+					fashionPage.changeSortOption_PriceHightoLow();
+					fashionPage.validateProductMaxPrice();
 								
 				}
 }

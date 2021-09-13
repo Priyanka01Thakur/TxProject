@@ -1,6 +1,7 @@
 package Drivers;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 
 import Driver.browsers.ChromeBrowser;
 import Driver.browsers.FirefoxBrowser;
@@ -9,6 +10,7 @@ import Driver.browsers.IEBrowser;
 public class DriverManager {
 
 	private static WebDriver driver =  null;
+	
 	
 	public WebDriver initDriver(String type) {
 		
