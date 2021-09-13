@@ -3,10 +3,6 @@
 <suite name="Suite">
 
 
-<listeners>  
-<listener class-name="Listerners.Listerner"/>  
-</listeners> 
-
   <test thread-count="1" name="Smoke Tests">
   
    	<groups>
